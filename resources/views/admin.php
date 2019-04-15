@@ -238,7 +238,7 @@
 
     //发布文章表单
     $('#publish').click(function () {
-        $('.content').html('<form class="form-article">' +
+        $('.content').html('<form class="form-article" style="width: 70%;margin: 0 auto">' +
             '<h2 style="text-align: center">Publish an Article</h2>' +
             '<input type="text" class="form-control" placeholder="Title" id="head" required autofocus>' +
             '<select class="form-control" id="type"></select>' +
@@ -251,12 +251,59 @@
         initsubmit();
     });
     //初始化summernote并监听图片上传事件
+
     function initsummernote() {
         $('#summernote').summernote({
+                toolbar: [
+
+                    <!--字体工具-->
+
+                    ['fontname', ['fontname', 'fontsize']], //字体系列
+
+                    ['style', ['bold', 'italic', 'underline', 'clear']], // 字体粗体、字体斜体、字体下划线、字体格式清除
+
+                //    ['font', ['strikethrough', 'superscript', 'subscript']], //字体划线、字体上标、字体下标
+
+                    ['fontsize', ['fontsize']], //字体大小
+                    ['height', ['height']], //行高
+
+                    ['color', ['color']], //字体颜色
+
+                    <!--段落工具-->
+
+                    ['style', ['style']],//样式
+
+                  //  ['para', ['ul', 'ol', 'paragraph']], //无序列表、有序列表、段落对齐方式
+
+                    <!--插入工具-->
+
+                    ['table',['table']], //插入表格
+
+                    ['hr',['hr']],//插入水平线
+
+                    ['link',['link']], //插入链接
+
+                    ['picture',['picture']], //插入图片
+
+                  //  ['video',['video']], //插入视频
+
+                    <!--其它-->
+
+                    ['fullscreen',['fullscreen']], //全屏
+
+                    ['codeview',['codeview']], //查看html代码
+
+                    ['undo',['undo']], //撤销
+
+                    ['redo',['redo']], //取消撤销
+
+                 //   ['help',['help']], //帮助
+
+                ],
             height: 550,
             marginTop: 20,
             focus: false,
-            placeholder: 'Body',
+            placeholder: 'Write Here...',
             required: true,
             callbacks: {
                 onImageUpload: function (files) {
@@ -323,7 +370,7 @@
                         $('.success').html('提交成功啦O(∩_∩)O').show().fadeOut(3000);
                         $('#article').click();
                     } else {
-                        console.log(data.message);
+                        alert(data.message+'，检查一下标题或正文叭~~');
                     }
                 }
             });
@@ -341,7 +388,7 @@
             '    <h3 class="form-head" style="text-align: center;margin-top: 20%">Name Or Signature Or Password</h3>'+
             '    <input type="text" class="form-control" placeholder="'+user.name+'" id="nname">'+
             '    <input type="text" class="form-control" placeholder="'+user.signature+'" id="s">'+
-            '    <input type="password" class="form-control" placeholder="Password" id="new" autocomplete="new-password">'+
+            '    <input type="password" class="form-control" placeholder="Password" id="new">'+
             '    <button class="btn btn-sm btn-primary btn-block" type="submit" id="Update">Update</button>'+
             '</form>'+
                 '</div>'
