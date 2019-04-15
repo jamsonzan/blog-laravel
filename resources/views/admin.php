@@ -341,7 +341,7 @@
             '    <h3 class="form-head" style="text-align: center;margin-top: 20%">Name Or Signature Or Password</h3>'+
             '    <input type="text" class="form-control" placeholder="'+user.name+'" id="nname">'+
             '    <input type="text" class="form-control" placeholder="'+user.signature+'" id="s">'+
-            '    <input type="text" class="form-control" placeholder="Password" id="new" onfocus="this.type=password">'+
+            '    <input type="password" class="form-control" placeholder="Password" id="new" autocomplete="off">'+
             '    <button class="btn btn-sm btn-primary btn-block" type="submit" id="Update">Update</button>'+
             '</form>'+
                 '</div>'
