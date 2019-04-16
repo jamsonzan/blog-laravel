@@ -380,8 +380,8 @@
     $('#setting').click(function () {
         $('.content').html('<div style="width: 60%;margin: 0px auto">'+
             '<form class="form-login">'+
-            '    <h3 class="form-head" style="text-align: center;margin-top: 15%">My Articles Type</h3>'+
-            '    <input type="text" class="form-control" placeholder="Type To Operate" id="ttype">'+
+            '    <h3 class="form-head" style="text-align: center;margin-top: 15%">My Article Type</h3>'+
+            '    <input type="text" class="form-control" placeholder="增加或删除文章类型，就可以在publish blog的type选项看到效果啦~" id="ttype">'+
             '    <button class="btn btn-sm btn-primary btn-block" type="submit" id="ADtype">Add Or Delete</button>'+
             '</form>'+
             '<form class="form-login">'+
