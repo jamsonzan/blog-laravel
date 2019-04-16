@@ -367,7 +367,7 @@
                     if (data.code == 1) {
                         $('#summernote').summernote('code', '');
                         $('#title').val('');
-                        $('.success').html('提交成功啦O(∩_∩)O').show().fadeOut(3000);
+                        $('.success').html('提交成功啦O(∩_∩)O').show().fadeOut(1500);
                         $('#article').click();
                     } else {
                         alert(data.message+'，检查一下标题或正文叭~~');
@@ -389,7 +389,7 @@
             '    <input type="text" class="form-control" placeholder="'+user.name+'" id="nname">'+
             '    <input type="text" class="form-control" placeholder="'+user.signature+'" id="s">'+
             '    <input type="password" class="form-control" placeholder="Password" id="new" autocomplete="new-password">'+
-            '    <button class="btn btn-sm btn-primary btn-block" type="submit" id="Update">Update</button>'+
+            '    <button href="#" class="btn btn-sm btn-primary btn-block" type="submit" id="Update">Update</button>'+
             '</form>'+
                 '</div>'
         );
@@ -399,6 +399,7 @@
             let s = $('#s').val();
             let new_ = $('#new').val();
             console.log(user);
+            let raw_name = name;
             if(name == user.name){
                 name = '';
                 console.log(name+s+new_);
@@ -415,10 +416,14 @@
                 success: function (data) {
                     if(data.code == 1){
                         getSetting();
+                        if(raw_name){
+                            $('#nname').attr('placeholder', raw_name);
+                        }
                         $('#nname').val('');
                         $('#s').val('');
                         $('#new').val('');
-                        $('.success').html('Update成功啦O(∩_∩)O').show().fadeOut(2500);
+                        scrollTo(0, 0);
+                        $('.success').html('Update成功啦O(∩_∩)O').show().fadeOut(1500);
                     }else {
                         alert(data.message);
                     }
@@ -442,7 +447,7 @@
                         $('#ttype').val('');
                         console.log(data.message);
                         getSetting();
-                        $('.success').html('Add Or Delete成功啦O(∩_∩)O').show().fadeOut(2500);
+                        $('.success').html('Add Or Delete成功啦O(∩_∩)O').show().fadeOut(1500);
                     }else {
                         alert(data.message);
                     }
@@ -457,7 +462,7 @@
             $(this).parent().addClass("active");
     });
     //登录成功提示
-    $('.success').html('登录成功啦O(∩_∩)O').show().fadeOut(2500);
+    $('.success').html('登录成功啦O(∩_∩)O').show().fadeOut(1500);
 </script>
 </body>
 </html>
