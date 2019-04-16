@@ -113,7 +113,7 @@ class UserController extends Controller
             if($this->hasName($name)){
                     return array(
                         'code' => 0,
-                        'message' => '已存在 '.$name.'用户'
+                        'message' => '用户名'.$name.'已经被抢啦'.'，再换一个叭~'
                     );
             }else{
                     $user = User::find($uid);

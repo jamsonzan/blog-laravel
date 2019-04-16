@@ -61,7 +61,11 @@
     let user = null;
     let types = null;
     let uid = getUrlParam('uid');
-    getSetting();
+    if(!uid){
+        window.location.href = '/login';
+    }else {
+        getSetting();
+    }
     function getSetting(){
         $.ajax({
             method: 'get',
