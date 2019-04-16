@@ -17,4 +17,4 @@ git clone https://github.com/jamsonzan/blog-laravel.git
 ```
 composer install
 ```
-稍等片刻就下载好啦！
+稍等片刻就安装好啦！
