@@ -116,7 +116,7 @@ class UserController extends Controller
                         'message' => '已存在 '.$name.'用户'
                     );
             }else{
-                    $user = User::find($uid)->first();
+                    $user = User::find($uid);
                     $user->name = $name;
                     $user->save();
                 }
