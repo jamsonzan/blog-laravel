@@ -73,6 +73,7 @@
                types.forEach(function (v) {
                    $('.nav').append('<li role="presentation"><a href="#">' + v.type + '</a></li>');
                });
+               $('.nav').append('<li role="presentation"><a href="http://www.jamsonzan.xyz/login" target="_blank">admin</a></li>');
                bindNav();
            },
            error: function (e) {
@@ -117,6 +118,9 @@
     //导航切换
     function bindNav() {
         $(".nav a").click(function () {
+            if($(this).text() == 'admin'){
+                return
+            }
             $(".nav").find(".active").removeClass("active");
             $(this).parent().addClass("active");
             $('.row').html('');
